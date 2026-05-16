@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-gray-50 text-gray-800 font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Reveal animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Custom animation delays */
+  .animation-delay-150 {
+    animation-delay: 150ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-450 {
+    animation-delay: 450ms;
+  }
+  
+  /* Fade-in keyframes */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+}
+
+/* Background classes for hero and header */
+.hero-bg {
+  background: linear-gradient(135deg, rgba(10,25,47,0.95) 0%, rgba(10,25,47,0.8) 100%), url('https://i.ibb.co/wFdPPrWx/IMG-20260423-WA0038.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.header-bg {
+  background: linear-gradient(95deg, #0a192f 0%, #0d9488 100%), url('https://i.ibb.co/wFdPPrWx/IMG-20260423-WA0038.jpg');
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-position: center;
+}
+
+/* Instagram embed responsive */
+.instagram-media {
+  margin: 0 auto !important;
+  min-width: 280px !important;
+  width: 100% !important;
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s ease;
+}
